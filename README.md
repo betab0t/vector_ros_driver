@@ -10,32 +10,13 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt-get update
 sudo apt-get install -y docker-ce
-sudo curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-2. Clone this repository and create docker-compose file from template
+2. Run using pre-built image from DockerHub, params are passed view environment variables:
 ```sh
-git clone https://github.com/betab0t/vector_ros
-cd vector_ros
-cp docker-compose-TEMPLATE.yml docker-compose.yml
-nano docker-compose.yml
+sudo docker run -e ANKI_USER_EMAIL=<EMAIL> -e ANKI_USER_PASSWORD=<PASSWORD> -e VECTOR_IP=<VECTOR_IP> -e VECTOR_SERIAL=<VECTOR_SERIAL> -e VECTOR_NAME=<VECTOR_NAME> --network host -it betab0t/vector-ros-driver
 ```
-
-3. Edit the following lines and save
-```yaml
-vector_ip: <VECTOR_IP>
-vector_name: <VECTOR_NAME>
-vector_serial: <VECTOR_SERIAL> 
-```
-*Not sure how to get this info? see FAQ section below*
-
-4. Build and start the container
-```sh
-sudo docker-compose build --build-arg anki_user_email=<ANKI_ACCOUNT_EMAIL> --build-arg anki_user_password=<ANKI_ACCOUNT_PASSWORD>
-sudo docker-compose up
-```
-*Use your [Anki Developer](https://developer.anki.com/) username and password*
+*Notice! Use your [Anki Developer](https://developer.anki.com/) username and password*
 
 # Topics
 * `/vector/camera`  *(sensor_msgs/Image)*
