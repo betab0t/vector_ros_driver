@@ -82,7 +82,7 @@ beta_b0t@home:~$ rosservice call /vector/say_text "text: 'hello world'"
 
 ## Play animation 
 ```sh
-beta_b0t@home:~$ rostopic pub /vector/play_animation/goal vector_ros/PlayAnimationActionGoal "header:
+beta_b0t@home:~$ rostopic pub /vector/play_animation/goal vector_ros_driver/PlayAnimationActionGoal "header:
   seq: 0
   stamp:
     secs: 0
@@ -104,4 +104,4 @@ goal:
 
 - **[How do i find Vector's serial number?](https://developer.anki.com/vector/docs/troubleshooting.html#can-t-find-serial-number)**
 
-- **Why isn't this XX from Vector SDK supported?** Well, I didn't wrap all the functions from the SDK - only the main ones as i see it. Yet, if you found a missing function that you need/would like to see as part of vector_ros, please consider opening a [new issue](https://github.com/betab0t/vector_ros/issues/new) with your proposal.
+- **Why isn't this XX from Vector SDK supported?** Well, I didn't wrap all the functions from the SDK - only the main ones as i see it. Yet, if you found a missing function that you need/would like to see as part of vector_ros_driver, please consider opening a [new issue](https://github.com/betab0t/vector_ros_driver/issues/new) with your proposal.

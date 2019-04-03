@@ -1,7 +1,7 @@
 FROM ros:melodic-ros-core-bionic
 
 # init catkin workspace
-RUN mkdir -p /catkin_ws/src/vector_ros
+RUN mkdir -p /catkin_ws/src/vector_ros_driver
 
 # install required dependencies
 RUN apt-get update && apt-get install -y \
@@ -44,7 +44,7 @@ RUN /ros_entrypoint.sh /bin/bash -c "mkdir /cv_bridge_build_ws && \
                                      catkin build cv_bridge"
 
 # copy pakcage source code
-COPY . /catkin_ws/src/vector_ros
+COPY . /catkin_ws/src/vector_ros_driver
 
 # clone diff_drive package and build all
 RUN git clone https://github.com/merose/diff_drive /catkin_ws/src/diff_drive && \
@@ -56,4 +56,4 @@ WORKDIR /catkin_ws
 COPY vector_entrypoint.sh /vector_entrypoint.sh
 ENTRYPOINT ["/vector_entrypoint.sh"]
 
-CMD ["roslaunch", "vector_ros", "vector.launch"]
+CMD ["roslaunch", "vector_ros_driver", "driver.launch"]

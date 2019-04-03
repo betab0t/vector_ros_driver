@@ -3,7 +3,7 @@
 import rospy
 import anki_vector
 
-from vector_ros.srv import HeadAngle, HeadAngleResponse, LiftHeight, LiftHeightResponse
+from vector_ros_driver.srv import HeadAngle, HeadAngleResponse, LiftHeight, LiftHeightResponse
 
 class Behavior(object):
     '''Expose functions list at https://developer.anki.com/vector/docs/generated/anki_vector.behavior.html'''

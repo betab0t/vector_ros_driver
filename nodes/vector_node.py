@@ -6,12 +6,12 @@ import threading
 import os
 import sys
 
-from vector_ros.vector import Vector
-from vector_ros.anim import Animation
-from vector_ros.drive import Drive
-from vector_ros.camera import Camera
-from vector_ros.behavior import Behavior
-from vector_ros.tf import JointStatesPublisher
+from vector_ros_driver.vector import Vector
+from vector_ros_driver.anim import Animation
+from vector_ros_driver.drive import Drive
+from vector_ros_driver.camera import Camera
+from vector_ros_driver.behavior import Behavior
+from vector_ros_driver.tf import JointStatesPublisher
 
 if __name__=="__main__":
     rospy.init_node("vector")

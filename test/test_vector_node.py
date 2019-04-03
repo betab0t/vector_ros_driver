@@ -6,12 +6,12 @@ import unittest
 
 from std_msgs.msg import Int32
 
-from vector_ros.srv import BatteryState
-from vector_ros.msg import PlayAnimationAction, PlayAnimationGoal, PlayAnimationResult
-from vector_ros.srv import AnimList, AnimListResponse
-from vector_ros.srv import HeadAngle, HeadAngleResponse
-from vector_ros.srv import LiftHeight, LiftHeightResponse
-from vector_ros.srv import SayText, SayTextResponse
+from vector_ros_driver.srv import BatteryState
+from vector_ros_driver.msg import PlayAnimationAction, PlayAnimationGoal, PlayAnimationResult
+from vector_ros_driver.srv import AnimList, AnimListResponse
+from vector_ros_driver.srv import HeadAngle, HeadAngleResponse
+from vector_ros_driver.srv import LiftHeight, LiftHeightResponse
+from vector_ros_driver.srv import SayText, SayTextResponse
 
 class TestVectorNode(unittest.TestCase):
     def test_battery_state_service(self):
@@ -86,4 +86,4 @@ class TestVectorNode(unittest.TestCase):
 if __name__=="__main__":
     import rostest
     rospy.init_node("tests_node")
-    rostest.rosrun("vector_ros", "test_vector_node", TestVectorNode)
+    rostest.rosrun("vector_ros_driver", "test_vector_node", TestVectorNode)
