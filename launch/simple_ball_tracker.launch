@@ -1,3 +1,0 @@
-<launch>
-    <node pkg="vector_ros" type="simple_ball_tracker_node.py" name="simple_ball_tracker"/>
-</launch>
