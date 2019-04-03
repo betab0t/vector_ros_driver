@@ -1,23 +1,9 @@
-# vector_ros
-This repository contains an *unofficial* ROS package for [Anki Vector](https://www.anki.com/en-us/vector) that I started as a small side project after finishing several online ROS courses. This package is essentially a wrapping of core Vector functions from [Vector Python SDK](https://github.com/anki/vector-python-sdk) as ROS topics, services and actions(full list below). In order to showcase the package I wrote a simple [red ball tracking node](https://github.com/betab0t/vector_ros/blob/develop/nodes/simple_ball_tracker_node.py) which subscribes to the camera feed coming from Vector, locates the red ball using cv_bridge/OpenCV and publish Twist messages to move the robot accurdenly as you can see in the following video:
-
-<p align="center">
-  <a target="_blank" href="http://www.youtube.com/watch?v=XxaOyA-M3U4">
-    <img src="http://img.youtube.com/vi/XxaOyA-M3U4/0.jpg">
-  </a>
-</p>
-
-# Mentions
-* http://www.theconstructsim.com/using-anki-vector-robot-ros-omri-ben-bassat :robot: :tv:
+# vector_ros_driver
+This repository contains a ROS package to control physical Anki Vector home robot. For more information please visit [vector_ros](https://github.com/betab0t/vector_ros) main repository.
 
 # Setup
-## Requirements(non Docker setup)
-- ROS Melodic with Python 3.6 installed
-- [Vector Python SDK](https://github.com/anki/vector-python-sdk)
-- [diff_drive](https://github.com/merose/diff_drive) package
-
 ## Docker Image
-It's highly recommended to use the supplied Dockerfile insted of installing directly on your machine mainly because of the tricky setup required to run Python 3 properly on ROS. If you wish to do this setup by yourself then [I wrote a blog post explaining how](https://medium.com/@beta_b0t/how-to-setup-ros-with-python-3-44a69ca36674) that you can use, else follow these instructions:
+It's highly recommended to use the supplied Dockerfile instead of installing directly on your machine mainly because of the tricky setup required to run Python 3 properly on ROS. If you wish to do this setup by yourself then [I wrote a blog post explaining how](https://medium.com/@beta_b0t/how-to-setup-ros-with-python-3-44a69ca36674) that you can use, else follow these instructions:
 1. Install [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04) and [docker-compose](https://docs.docker.com/compose/install/) if you dont have it already installed
 ```sh
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
