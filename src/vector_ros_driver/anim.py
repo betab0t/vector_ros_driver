@@ -5,8 +5,8 @@ import actionlib
 
 import anki_vector
 
-from vector_ros_driver.msg import PlayAnimationAction
-from vector_ros_driver.srv import AnimList, AnimListResponse
+from vector_ros.msg import PlayAnimationAction
+from vector_ros.srv import AnimList, AnimListResponse
 
 class Animation(object):
     '''Expose functions list at https://developer.anki.com/vector/docs/generated/anki_vector.animation.html'''

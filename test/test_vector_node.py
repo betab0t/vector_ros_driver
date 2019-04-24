@@ -6,12 +6,14 @@ import unittest
 
 from std_msgs.msg import Int32
 
-from vector_ros_driver.srv import BatteryState
-from vector_ros_driver.msg import PlayAnimationAction, PlayAnimationGoal, PlayAnimationResult
-from vector_ros_driver.srv import AnimList, AnimListResponse
-from vector_ros_driver.srv import HeadAngle, HeadAngleResponse
-from vector_ros_driver.srv import LiftHeight, LiftHeightResponse
-from vector_ros_driver.srv import SayText, SayTextResponse
+from vector_ros.srv import BatteryState
+from vector_ros.srv import AnimList, AnimListResponse
+from vector_ros.srv import HeadAngle, HeadAngleResponse
+from vector_ros.srv import LiftHeight, LiftHeightResponse
+from vector_ros.srv import SayText, SayTextResponse
+
+from vector_ros.msg import PlayAnimationAction, PlayAnimationGoal, PlayAnimationResult
+
 
 class TestVectorNode(unittest.TestCase):
     def test_battery_state_service(self):

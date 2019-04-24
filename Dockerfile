@@ -46,9 +46,14 @@ RUN /ros_entrypoint.sh /bin/bash -c "mkdir /cv_bridge_build_ws && \
 # copy pakcage source code
 COPY . /catkin_ws/src/vector_ros_driver
 
-# clone diff_drive package and build all
-RUN git clone https://github.com/merose/diff_drive /catkin_ws/src/diff_drive && \
-    cd /catkin_ws && \
+# clone vector_ros repo
+RUN git clone https://github.com/betab0t/vector_ros /catkin_ws/src/vector_ros
+
+# clone diff_drive package
+RUN git clone https://github.com/merose/diff_drive /catkin_ws/src/diff_drive
+
+# build all packages in catkin_ws
+RUN cd /catkin_ws && \
     /ros_entrypoint.sh catkin_make
 
 WORKDIR /catkin_ws
