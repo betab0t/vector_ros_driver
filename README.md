@@ -26,3 +26,6 @@ sudo docker run -e ANKI_USER_EMAIL=<EMAIL> -e ANKI_USER_PASSWORD=<PASSWORD> -e V
 - **[How do i find Vector's name?](https://developer.anki.com/vector/docs/troubleshooting.html#can-t-find-robot-name)**
 
 - **[How do i find Vector's serial number?](https://developer.anki.com/vector/docs/troubleshooting.html#can-t-find-serial-number)**
+
+## Notes
+To avoid problems authenticating with Anki Cloud, it's better to avoid using in the password special characters like $.
