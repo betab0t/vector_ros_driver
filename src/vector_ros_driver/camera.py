@@ -8,9 +8,10 @@ import numpy
 from sensor_msgs.msg import Image
 
 class Camera(object):
-    def __init__(self, async_robot, publish_rate=10):
+    def __init__(self, async_robot, publish_rate=10, image_frame_id='camera_link'):
         self.async_robot = async_robot
         self.rate = rospy.Rate(publish_rate)
+        self.image_frame_id = image_frame_id
         self.image_publisher = rospy.Publisher("~camera", Image, queue_size=1)
         self.publish_camera_feed()
 
@@ -19,6 +20,8 @@ class Camera(object):
 
         while not rospy.is_shutdown():
             image = bridge.cv2_to_imgmsg(numpy.asarray(self.async_robot.camera.latest_image), encoding="rgb8") # convert PIL.Image to ROS Image
+            image.header.stamp = rospy.Time.now()
+            image.header.frame_id = self.image_frame_id
             self.image_publisher.publish(image)
 
             # make sure to publish at required rate
